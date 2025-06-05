@@ -5,7 +5,11 @@ while True:# 조건이 True면 계속 작동합니다.
     num = input('사용하실 번호을 선택해주세요 (1.입금, 2.출금, 3.영수증보기, 4.종료): ')
     #2번 출금 기능 코드
     if num == '2':
-        print('출금')
+        withdraw_amount = int(input("출금할 금액을 입력해주세요 : "))
+        withdraw_amount = min(balance, withdraw_amount)
+        balance -= withdraw_amount
+        print(f'출금하신 금액은 {withdraw_amount}원 이고, 현재 잔액은 {balance}원 입니다')
+
     #1번 입금 기능 코드
     if num == '1':
         #얼마를 입금할거야?
